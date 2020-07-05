@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VENDASModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="cadastro">
+    <Key>
+      <PropertyRef Name="nome_usuario" />
+    </Key>
+    <Property Name="nome_usuario" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="telefone" Type="nchar" MaxLength="30" Nullable="false" />
+    <Property Name="email" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="endereco" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="adicional" Type="nchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="compra">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="produto" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="preco" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="entregas">
+    <Key>
+      <PropertyRef Name="entrega" />
+    </Key>
+    <Property Name="entrega" Type="nchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="reserva">
+    <Key>
+      <PropertyRef Name="dia" />
+    </Key>
+    <Property Name="dia" Type="date" Nullable="false" />
+    <Property Name="hora" Type="time" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="usuarios">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+    </Key>
+    <Property Name="id_usuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nome_usuario" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="senha" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_cadastro_cadastro">
+    <End Role="cadastro" Type="Self.cadastro" Multiplicity="1" />
+    <End Role="cadastro1" Type="Self.cadastro" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="cadastro">
+        <PropertyRef Name="nome_usuario" />
+      </Principal>
+      <Dependent Role="cadastro1">
+        <PropertyRef Name="nome_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="VENDASModelStoreContainer">
+    <EntitySet Name="cadastro" EntityType="Self.cadastro" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="compra" EntityType="Self.compra" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="entregas" EntityType="Self.entregas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="reserva" EntityType="Self.reserva" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="usuarios" EntityType="Self.usuarios" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_cadastro_cadastro" Association="Self.FK_cadastro_cadastro">
+      <End Role="cadastro" EntitySet="cadastro" />
+      <End Role="cadastro1" EntitySet="cadastro" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

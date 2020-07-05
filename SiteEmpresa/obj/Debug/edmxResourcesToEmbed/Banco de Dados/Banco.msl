@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="VENDASModelStoreContainer" CdmEntityContainer="DB_VENDAS">
+    <EntitySetMapping Name="cadastro">
+      <EntityTypeMapping TypeName="VENDASModel.cadastro">
+        <MappingFragment StoreEntitySet="cadastro">
+          <ScalarProperty Name="adicional" ColumnName="adicional" />
+          <ScalarProperty Name="endereco" ColumnName="endereco" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="telefone" ColumnName="telefone" />
+          <ScalarProperty Name="nome_usuario" ColumnName="nome_usuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="entregas">
+      <EntityTypeMapping TypeName="VENDASModel.entregas">
+        <MappingFragment StoreEntitySet="entregas">
+          <ScalarProperty Name="entrega" ColumnName="entrega" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="reserva">
+      <EntityTypeMapping TypeName="VENDASModel.reserva">
+        <MappingFragment StoreEntitySet="reserva">
+          <ScalarProperty Name="hora" ColumnName="hora" />
+          <ScalarProperty Name="dia" ColumnName="dia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usuarios">
+      <EntityTypeMapping TypeName="VENDASModel.usuarios">
+        <MappingFragment StoreEntitySet="usuarios">
+          <ScalarProperty Name="senha" ColumnName="senha" />
+          <ScalarProperty Name="nome_usuario" ColumnName="nome_usuario" />
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="compra">
+      <EntityTypeMapping TypeName="VENDASModel.compra">
+        <MappingFragment StoreEntitySet="compra">
+          <ScalarProperty Name="preco" ColumnName="preco" />
+          <ScalarProperty Name="produto" ColumnName="produto" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8d44a3cdac54466d8bdadf44e8efc6eb" Name="Diagram1">
+        <EntityTypeShape EntityType="VENDASModel.cadastro" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="VENDASModel.entregas" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="VENDASModel.reserva" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="VENDASModel.usuarios" Width="1.5" PointX="0.75" PointY="4.75" />
+        <AssociationConnector Association="VENDASModel.FK_cadastro_cadastro" />
+        <EntityTypeShape EntityType="VENDASModel.compra" Width="1.5" PointX="3.375" PointY="4.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
