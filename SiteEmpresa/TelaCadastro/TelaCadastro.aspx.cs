@@ -15,23 +15,9 @@ namespace SiteEmpresa.TelaCadastro
         List<compra> compras;
         protected void Page_Load(object sender, EventArgs e)
         {
-           /*  montarTabela();
-            if (!this.IsPostBack)
-            {
-                this.BindGrid();
-            }*/
+           
         }
-        /*
-        private void BindGrid()
-        {
-            using (db)
-            {
-                GridView1.DataSource = from compra in db.compra
-                                      select compra;
-               GridView1.DataBind();
-            }
-        }
-        */
+       
 
         private void selecionarItem(object sender, EventArgs e)
         {
@@ -58,6 +44,12 @@ namespace SiteEmpresa.TelaCadastro
         protected void OnRowEditing(object sender, GridViewEditEventArgs e)
         {
             GridView1.EditIndex = e.NewEditIndex;
+        }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtAlimento.Text = GridView1.SelectedRow.Cells[1].Text;
+            txtPreco.Text = GridView1.SelectedRow.Cells[2].Text;
         }
 
         protected void SalvarAlimento_Click(object sender, EventArgs e)
