@@ -26,6 +26,9 @@ namespace SiteEmpresa.Cadastro
             Response.Redirect("/Login/default.aspx");
         }
 
-       
+        protected void btnLogin_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/Login");
+        }
     }
 }

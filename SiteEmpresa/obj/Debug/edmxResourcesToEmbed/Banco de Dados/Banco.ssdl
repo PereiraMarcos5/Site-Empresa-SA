@@ -18,11 +18,20 @@
     <Property Name="produto" Type="nchar" MaxLength="20" Nullable="false" />
     <Property Name="preco" Type="float" Nullable="false" />
   </EntityType>
-  <EntityType Name="entregas">
+  <EntityType Name="entregue">
     <Key>
-      <PropertyRef Name="entrega" />
+      <PropertyRef Name="id" />
     </Key>
-    <Property Name="entrega" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="data" Type="date" />
+  </EntityType>
+  <EntityType Name="pedidos_entregues">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="produto" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="preco" Type="float" Nullable="false" />
   </EntityType>
   <EntityType Name="reserva">
     <Key>
@@ -54,7 +63,8 @@
   <EntityContainer Name="VENDASModelStoreContainer">
     <EntitySet Name="cadastro" EntityType="Self.cadastro" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="compra" EntityType="Self.compra" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="entregas" EntityType="Self.entregas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="entregue" EntityType="Self.entregue" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="pedidos_entregues" EntityType="Self.pedidos_entregues" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="reserva" EntityType="Self.reserva" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="usuarios" EntityType="Self.usuarios" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_cadastro_cadastro" Association="Self.FK_cadastro_cadastro">

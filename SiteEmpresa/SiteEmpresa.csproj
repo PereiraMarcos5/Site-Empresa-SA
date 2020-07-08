@@ -165,7 +165,10 @@
     <Compile Include="Banco de Dados\compra.cs">
       <DependentUpon>Banco.tt</DependentUpon>
     </Compile>
-    <Compile Include="Banco de Dados\entregas.cs">
+    <Compile Include="Banco de Dados\entregue.cs">
+      <DependentUpon>Banco.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Banco de Dados\pedidos_entregues.cs">
       <DependentUpon>Banco.tt</DependentUpon>
     </Compile>
     <Compile Include="Banco de Dados\reserva.cs">
@@ -182,6 +185,13 @@
       <DependentUpon>cadastro.aspx</DependentUpon>
     </Compile>
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Entrega\Entrega.aspx.cs">
+      <DependentUpon>Entrega.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Entrega\Entrega.aspx.designer.cs">
+      <DependentUpon>Entrega.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -231,6 +241,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Entrega\Entrega.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

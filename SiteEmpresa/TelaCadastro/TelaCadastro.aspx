@@ -16,10 +16,9 @@
             Cadastrar Preço</div>
             <asp:TextBox ID="txtPreco" runat="server" placeholder="Alimento" CssClass="fadeIn second"></asp:TextBox>
             <asp:Button ID="SalvarAlimento" runat="server" Text="Salvar" OnClick="SalvarAlimento_Click" />
-            <div><asp:Button ID="BtnSelect" runat="server" Text="Selecionar" /></div>
+            <div></div>
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1">
                 <Columns>
-                    <asp:CommandField ShowSelectButton="True" />
                     <asp:BoundField DataField="produto" HeaderText="produto" SortExpression="produto" />
                     <asp:BoundField DataField="preco" HeaderText="preco" SortExpression="preco" />
                 </Columns>

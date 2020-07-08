@@ -17,7 +17,7 @@
     <!------ Include the above in your HEAD tag ---------->
 
     <nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Sistema Vendas</a>
+        <a class="navbar-brand" href="#">Só Natura</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -28,7 +28,14 @@
                     <a class="nav-link" href="/Painel");>
                         <i class="fa fa-home"></i>
                         Pagina Inicial
+
+                         
+                    <a class="nav-link" href="/TelaCadastro/TelaCadastro.aspx");>
+                        <i class="fa fa-home"></i>
+                        Cardapio
          
+                       
+                        
                  
             </ul>
             <form class="form-inline my-2 my-lg-0">

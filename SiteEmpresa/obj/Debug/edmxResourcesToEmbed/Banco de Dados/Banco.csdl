@@ -2,7 +2,6 @@
 <Schema Namespace="VENDASModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="DB_VENDAS" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="cadastro" EntityType="VENDASModel.cadastro" />
-    <EntitySet Name="entregas" EntityType="VENDASModel.entregas" />
     <EntitySet Name="reserva" EntityType="VENDASModel.reserva" />
     <EntitySet Name="usuarios" EntityType="VENDASModel.usuarios" />
     <AssociationSet Name="FK_cadastro_cadastro" Association="VENDASModel.FK_cadastro_cadastro">
@@ -10,6 +9,8 @@
       <End Role="cadastro1" EntitySet="cadastro" />
     </AssociationSet>
     <EntitySet Name="compra" EntityType="VENDASModel.compra" />
+    <EntitySet Name="entregue" EntityType="VENDASModel.entregue" />
+    <EntitySet Name="pedidos_entregues" EntityType="VENDASModel.pedidos_entregues" />
   </EntityContainer>
   <EntityType Name="cadastro">
     <Key>
@@ -22,12 +23,6 @@
     <Property Name="adicional" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
     <NavigationProperty Name="cadastro1" Relationship="VENDASModel.FK_cadastro_cadastro" FromRole="cadastro" ToRole="cadastro1" />
     <NavigationProperty Name="cadastro2" Relationship="VENDASModel.FK_cadastro_cadastro" FromRole="cadastro1" ToRole="cadastro" />
-  </EntityType>
-  <EntityType Name="entregas">
-    <Key>
-      <PropertyRef Name="entrega" />
-    </Key>
-    <Property Name="entrega" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
   </EntityType>
   <EntityType Name="reserva">
     <Key>
@@ -57,6 +52,21 @@
     </ReferentialConstraint>
   </Association>
   <EntityType Name="compra">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="produto" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="preco" Type="Double" Nullable="false" />
+  </EntityType>
+  <EntityType Name="entregue">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="data" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="pedidos_entregues">
     <Key>
       <PropertyRef Name="id" />
     </Key>

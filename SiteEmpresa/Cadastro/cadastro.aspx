@@ -11,9 +11,10 @@
     <form id="form1" runat="server">
         <div>
             Cadastro
-             <asp:TextBox ID="txtNomeUsuario" runat="server" placeholder="Usuário" CssClass="fadeIn second"></asp:TextBox>
-             <asp:TextBox ID="txtSenha" runat="server" placeholder="Senha" CssClass="fadeIn" TextMode="Password"></asp:TextBox>
-             <asp:Button ID="btnSalvar" runat="server" Text="Salvar" onclick="btnSalvar_Click"/>
+            <asp:TextBox ID="txtNomeUsuario" runat="server" placeholder="Usuário" CssClass="fadeIn second"></asp:TextBox>
+            <asp:TextBox ID="txtSenha" runat="server" placeholder="Senha" CssClass="fadeIn" TextMode="Password"></asp:TextBox>
+            <asp:Button ID="btnSalvar" runat="server" Text="Salvar" onclick="btnSalvar_Click"/>
+            <asp:Button ID="btnLogin" runat="server" OnClick="btnLogin_Click" Text="Logar" />
         </div>
     </form>
 </body>

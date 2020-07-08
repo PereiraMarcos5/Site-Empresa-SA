@@ -12,8 +12,9 @@ namespace SiteEmpresa.Banco_de_Dados
     using System;
     using System.Collections.Generic;
     
-    public partial class entregas
+    public partial class entregue
     {
-        public string entrega { get; set; }
+        public int id { get; set; }
+        public Nullable<System.DateTime> data { get; set; }
     }
 }

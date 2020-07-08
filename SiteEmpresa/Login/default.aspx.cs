@@ -15,6 +15,7 @@ namespace SiteEmpresa.Login
 
         }
 
+
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             DB_VENDAS db = new DB_VENDAS();
@@ -39,6 +40,11 @@ namespace SiteEmpresa.Login
             {
                 Response.Write("falha no sistema" + ex.Message);
             }
+        }
+
+        protected void btnCadastro_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/Cadastro/cadastro.aspx");
         }
     }
 }

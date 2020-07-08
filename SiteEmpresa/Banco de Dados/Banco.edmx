@@ -23,11 +23,20 @@
           <Property Name="produto" Type="nchar" MaxLength="20" Nullable="false" />
           <Property Name="preco" Type="float" Nullable="false" />
         </EntityType>
-        <EntityType Name="entregas">
+        <EntityType Name="entregue">
           <Key>
-            <PropertyRef Name="entrega" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="entrega" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="data" Type="date" />
+        </EntityType>
+        <EntityType Name="pedidos_entregues">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="produto" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="preco" Type="float" Nullable="false" />
         </EntityType>
         <EntityType Name="reserva">
           <Key>
@@ -59,7 +68,8 @@
         <EntityContainer Name="VENDASModelStoreContainer">
           <EntitySet Name="cadastro" EntityType="Self.cadastro" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="compra" EntityType="Self.compra" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="entregas" EntityType="Self.entregas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="entregue" EntityType="Self.entregue" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="pedidos_entregues" EntityType="Self.pedidos_entregues" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="reserva" EntityType="Self.reserva" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="usuarios" EntityType="Self.usuarios" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_cadastro_cadastro" Association="Self.FK_cadastro_cadastro">
@@ -73,7 +83,6 @@
       <Schema Namespace="VENDASModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="DB_VENDAS" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="cadastro" EntityType="VENDASModel.cadastro" />
-          <EntitySet Name="entregas" EntityType="VENDASModel.entregas" />
           <EntitySet Name="reserva" EntityType="VENDASModel.reserva" />
           <EntitySet Name="usuarios" EntityType="VENDASModel.usuarios" />
           <AssociationSet Name="FK_cadastro_cadastro" Association="VENDASModel.FK_cadastro_cadastro">
@@ -81,6 +90,8 @@
             <End Role="cadastro1" EntitySet="cadastro" />
           </AssociationSet>
           <EntitySet Name="compra" EntityType="VENDASModel.compra" />
+          <EntitySet Name="entregue" EntityType="VENDASModel.entregue" />
+          <EntitySet Name="pedidos_entregues" EntityType="VENDASModel.pedidos_entregues" />
         </EntityContainer>
         <EntityType Name="cadastro">
           <Key>
@@ -93,12 +104,6 @@
           <Property Name="adicional" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="cadastro1" Relationship="VENDASModel.FK_cadastro_cadastro" FromRole="cadastro" ToRole="cadastro1" />
           <NavigationProperty Name="cadastro2" Relationship="VENDASModel.FK_cadastro_cadastro" FromRole="cadastro1" ToRole="cadastro" />
-        </EntityType>
-        <EntityType Name="entregas">
-          <Key>
-            <PropertyRef Name="entrega" />
-          </Key>
-          <Property Name="entrega" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
         </EntityType>
         <EntityType Name="reserva">
           <Key>
@@ -135,6 +140,21 @@
           <Property Name="produto" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
           <Property Name="preco" Type="Double" Nullable="false" />
         </EntityType>
+        <EntityType Name="entregue">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="data" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="pedidos_entregues">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="produto" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="preco" Type="Double" Nullable="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -149,13 +169,6 @@
                 <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="telefone" ColumnName="telefone" />
                 <ScalarProperty Name="nome_usuario" ColumnName="nome_usuario" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="entregas">
-            <EntityTypeMapping TypeName="VENDASModel.entregas">
-              <MappingFragment StoreEntitySet="entregas">
-                <ScalarProperty Name="entrega" ColumnName="entrega" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -185,6 +198,23 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="entregue">
+            <EntityTypeMapping TypeName="VENDASModel.entregue">
+              <MappingFragment StoreEntitySet="entregue">
+                <ScalarProperty Name="data" ColumnName="data" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pedidos_entregues">
+            <EntityTypeMapping TypeName="VENDASModel.pedidos_entregues">
+              <MappingFragment StoreEntitySet="pedidos_entregues">
+                <ScalarProperty Name="preco" ColumnName="preco" />
+                <ScalarProperty Name="produto" ColumnName="produto" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -199,8 +229,8 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="false" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>

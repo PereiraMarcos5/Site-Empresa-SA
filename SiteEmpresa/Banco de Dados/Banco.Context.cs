@@ -26,9 +26,10 @@ namespace SiteEmpresa.Banco_de_Dados
         }
     
         public virtual DbSet<cadastro> cadastro { get; set; }
-        public virtual DbSet<entregas> entregas { get; set; }
         public virtual DbSet<reserva> reserva { get; set; }
         public virtual DbSet<usuarios> usuarios { get; set; }
         public virtual DbSet<compra> compra { get; set; }
+        public virtual DbSet<entregue> entregue { get; set; }
+        public virtual DbSet<pedidos_entregues> pedidos_entregues { get; set; }
     }
 }

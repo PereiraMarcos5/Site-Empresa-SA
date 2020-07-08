@@ -12,13 +12,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="entregas">
-      <EntityTypeMapping TypeName="VENDASModel.entregas">
-        <MappingFragment StoreEntitySet="entregas">
-          <ScalarProperty Name="entrega" ColumnName="entrega" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="reserva">
       <EntityTypeMapping TypeName="VENDASModel.reserva">
         <MappingFragment StoreEntitySet="reserva">
@@ -39,6 +32,23 @@
     <EntitySetMapping Name="compra">
       <EntityTypeMapping TypeName="VENDASModel.compra">
         <MappingFragment StoreEntitySet="compra">
+          <ScalarProperty Name="preco" ColumnName="preco" />
+          <ScalarProperty Name="produto" ColumnName="produto" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="entregue">
+      <EntityTypeMapping TypeName="VENDASModel.entregue">
+        <MappingFragment StoreEntitySet="entregue">
+          <ScalarProperty Name="data" ColumnName="data" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pedidos_entregues">
+      <EntityTypeMapping TypeName="VENDASModel.pedidos_entregues">
+        <MappingFragment StoreEntitySet="pedidos_entregues">
           <ScalarProperty Name="preco" ColumnName="preco" />
           <ScalarProperty Name="produto" ColumnName="produto" />
           <ScalarProperty Name="id" ColumnName="id" />
