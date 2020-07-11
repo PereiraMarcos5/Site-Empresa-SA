@@ -69,15 +69,6 @@ namespace SiteEmpresa.Entrega
         protected global::System.Web.UI.WebControls.Button btnSelect;
 
         /// <summary>
-        /// Controle GridView2.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView2;
-
-        /// <summary>
         /// Controle bntComprar.
         /// </summary>
         /// <remarks>

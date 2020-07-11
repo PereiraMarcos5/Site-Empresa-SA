@@ -11,6 +11,8 @@
     <EntitySet Name="compra" EntityType="VENDASModel.compra" />
     <EntitySet Name="entregue" EntityType="VENDASModel.entregue" />
     <EntitySet Name="pedidos_entregues" EntityType="VENDASModel.pedidos_entregues" />
+    <EntitySet Name="entregas" EntityType="VENDASModel.entrega" />
+    <EntitySet Name="entregadors" EntityType="VENDASModel.entregador" />
   </EntityContainer>
   <EntityType Name="cadastro">
     <Key>
@@ -73,5 +75,19 @@
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="produto" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
     <Property Name="preco" Type="Double" Nullable="false" />
+  </EntityType>
+  <EntityType Name="entrega">
+    <Key>
+      <PropertyRef Name="id_entrega" />
+    </Key>
+    <Property Name="endereço" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="id_entrega" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="entregador">
+    <Key>
+      <PropertyRef Name="id_entregador" />
+    </Key>
+    <Property Name="id_entregador" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nome_entregador" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
   </EntityType>
 </Schema>

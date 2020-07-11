@@ -23,6 +23,20 @@
           <Property Name="produto" Type="nchar" MaxLength="20" Nullable="false" />
           <Property Name="preco" Type="float" Nullable="false" />
         </EntityType>
+        <EntityType Name="entrega">
+          <Key>
+            <PropertyRef Name="id_entrega" />
+          </Key>
+          <Property Name="endereço" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="id_entrega" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="entregador">
+          <Key>
+            <PropertyRef Name="id_entregador" />
+          </Key>
+          <Property Name="id_entregador" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nome_entregador" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
         <EntityType Name="entregue">
           <Key>
             <PropertyRef Name="id" />
@@ -68,6 +82,8 @@
         <EntityContainer Name="VENDASModelStoreContainer">
           <EntitySet Name="cadastro" EntityType="Self.cadastro" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="compra" EntityType="Self.compra" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="entrega" EntityType="Self.entrega" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="entregador" EntityType="Self.entregador" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="entregue" EntityType="Self.entregue" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="pedidos_entregues" EntityType="Self.pedidos_entregues" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="reserva" EntityType="Self.reserva" Schema="dbo" store:Type="Tables" />
@@ -92,6 +108,8 @@
           <EntitySet Name="compra" EntityType="VENDASModel.compra" />
           <EntitySet Name="entregue" EntityType="VENDASModel.entregue" />
           <EntitySet Name="pedidos_entregues" EntityType="VENDASModel.pedidos_entregues" />
+          <EntitySet Name="entregas" EntityType="VENDASModel.entrega" />
+          <EntitySet Name="entregadors" EntityType="VENDASModel.entregador" />
         </EntityContainer>
         <EntityType Name="cadastro">
           <Key>
@@ -155,6 +173,20 @@
           <Property Name="produto" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
           <Property Name="preco" Type="Double" Nullable="false" />
         </EntityType>
+        <EntityType Name="entrega">
+          <Key>
+            <PropertyRef Name="id_entrega" />
+          </Key>
+          <Property Name="endereço" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="id_entrega" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="entregador">
+          <Key>
+            <PropertyRef Name="id_entregador" />
+          </Key>
+          <Property Name="id_entregador" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nome_entregador" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -212,6 +244,22 @@
                 <ScalarProperty Name="preco" ColumnName="preco" />
                 <ScalarProperty Name="produto" ColumnName="produto" />
                 <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="entregas">
+            <EntityTypeMapping TypeName="VENDASModel.entrega">
+              <MappingFragment StoreEntitySet="entrega">
+                <ScalarProperty Name="id_entrega" ColumnName="id_entrega" />
+                <ScalarProperty Name="endereço" ColumnName="endereço" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="entregadors">
+            <EntityTypeMapping TypeName="VENDASModel.entregador">
+              <MappingFragment StoreEntitySet="entregador">
+                <ScalarProperty Name="nome_entregador" ColumnName="nome_entregador" />
+                <ScalarProperty Name="id_entregador" ColumnName="id_entregador" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

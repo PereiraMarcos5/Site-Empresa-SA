@@ -55,5 +55,21 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="entregas">
+      <EntityTypeMapping TypeName="VENDASModel.entrega">
+        <MappingFragment StoreEntitySet="entrega">
+          <ScalarProperty Name="id_entrega" ColumnName="id_entrega" />
+          <ScalarProperty Name="endereço" ColumnName="endereço" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="entregadors">
+      <EntityTypeMapping TypeName="VENDASModel.entregador">
+        <MappingFragment StoreEntitySet="entregador">
+          <ScalarProperty Name="nome_entregador" ColumnName="nome_entregador" />
+          <ScalarProperty Name="id_entregador" ColumnName="id_entregador" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

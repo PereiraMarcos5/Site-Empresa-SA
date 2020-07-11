@@ -13,6 +13,7 @@ namespace SiteEmpresa.TelaCadastro
     {
         DB_VENDAS db = new DB_VENDAS();
         List<compra> compras;
+        compra compraselecionada;
         protected void Page_Load(object sender, EventArgs e)
         {
            
@@ -41,10 +42,7 @@ namespace SiteEmpresa.TelaCadastro
             */
         }
 
-        protected void OnRowEditing(object sender, GridViewEditEventArgs e)
-        {
-            GridView1.EditIndex = e.NewEditIndex;
-        }
+       
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -59,7 +57,7 @@ namespace SiteEmpresa.TelaCadastro
               preco=(Convert.ToDouble(txtPreco.Text))};
             db.compra.Add(novo);
             db.SaveChanges();
-            
+            Response.Redirect("/TelaCadastro/TelaCadastro.aspx");
         }
         private void montarTabela()
         {
@@ -70,6 +68,25 @@ namespace SiteEmpresa.TelaCadastro
         {
 
          
+        }
+
+        protected void btnRemove_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(GridView1.SelectedRow.Cells[1].Text);
+            if (id > 0)
+            {
+                compraselecionada = db.compra.Find(id);
+                db.compra.Remove(compraselecionada);
+                db.SaveChanges();
+                //MessageBox.Show("Banco Excluido");
+                //montarTabela();
+
+            Response.Redirect("/TelaCadastro/TelaCadastro.aspx");
+            }
+            else
+            {
+                //MessageBox.Show("Selecione o banco que voce quer alterar");
+            }
         }
     }
 }

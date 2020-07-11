@@ -31,5 +31,7 @@ namespace SiteEmpresa.Banco_de_Dados
         public virtual DbSet<compra> compra { get; set; }
         public virtual DbSet<entregue> entregue { get; set; }
         public virtual DbSet<pedidos_entregues> pedidos_entregues { get; set; }
+        public virtual DbSet<entrega> entregas { get; set; }
+        public virtual DbSet<entregador> entregadors { get; set; }
     }
 }

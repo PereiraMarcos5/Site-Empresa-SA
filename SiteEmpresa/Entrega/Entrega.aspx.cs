@@ -65,7 +65,7 @@ namespace SiteEmpresa.Entrega
 
         protected void bntComprar_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("/Entrega/Carrinho.aspx");
         }
     }
 }
