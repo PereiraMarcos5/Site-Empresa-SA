@@ -30,5 +30,20 @@ namespace SiteEmpresa.cliente
             Response.Write(@"<script>alert('Cliente logado com Sucesso, seja bem vindo "+novo.nome_cliente+"!);</script>");
             Response.Redirect("/Painel");
         }
+
+        protected void btnSalvar_Click1(object sender, EventArgs e)
+        {
+            clientes novo = new clientes()
+            {
+                nome_cliente = txtNome.Text,
+                endereco = txtEndereco.Text,
+                cartao = txtCartao.Text,
+                idade = (Convert.ToInt32(txtIdade.Text))
+            };
+            db.clientes.Add(novo);
+            db.SaveChanges();
+            Response.Write(@"<script>alert('Cliente logado com Sucesso, seja bem vindo " + novo.nome_cliente + "!);</script>");
+            Response.Redirect("/Painel");
+        }
     }
 }

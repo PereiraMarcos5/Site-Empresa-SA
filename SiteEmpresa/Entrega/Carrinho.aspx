@@ -57,7 +57,7 @@
         <div>
             Carrinho
         </div>
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="SqlDataSource1" Width="242px">
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="SqlDataSource1" Width="242px" OnLoad="GridView1_Load" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
             <Columns>
                 <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
                 <asp:BoundField DataField="produto" HeaderText="produto" SortExpression="produto" />
@@ -65,10 +65,33 @@
             </Columns>
         </asp:GridView>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:VENDASConnectionString %>" SelectCommand="SELECT [id], [produto], [preco] FROM [pedidos_entregues]"></asp:SqlDataSource>
-        <div>Entregador</div>
         <div>
-            <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" DataSourceID="SqlDataSource2" DataTextField="nome_entregador" DataValueField="nome_entregador" AutoPostBack="True">
+            <br />
+        </div>
+        <asp:Label ID="Label1" runat="server" Text="Preço:           "></asp:Label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:TextBox ID="txtPreco" runat="server" Height="24px" OnTextChanged="txtPreco_TextChanged" Width="66px"></asp:TextBox>
+        <br />
+        <br />
+        <div>
+            <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:VENDASConnectionString %>" SelectCommand="SELECT [endereco] FROM [clientes]"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:VENDASConnectionString %>" SelectCommand="SELECT [cartao] FROM [clientes]"></asp:SqlDataSource>
+        </div>
+        <div>Entregador:&nbsp; <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" DataSourceID="SqlDataSource2" DataTextField="nome_entregador" DataValueField="nome_entregador" AutoPostBack="True">
             </asp:DropDownList>
+            <br />
+            <br />
+            Endereco:&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:DropDownList ID="DropDownList2" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource3" DataTextField="endereco" DataValueField="endereco" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged">
+            </asp:DropDownList>
+            <br />
+            <br />
+            Cartao:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:DropDownList ID="DropDownList3" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource4" DataTextField="cartao" DataValueField="cartao" OnSelectedIndexChanged="DropDownList3_SelectedIndexChanged">
+            </asp:DropDownList>
+        </div>
+        <div>
+            <br />
             </div>
         <div>
             <asp:Button ID="btnComprar" runat="server" Text="Comprar" OnClick="btnComprar_Click" />

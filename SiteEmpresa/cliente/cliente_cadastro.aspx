@@ -86,7 +86,7 @@
             Idade:</div>
         <asp:TextBox ID="txtIdade" runat="server" Width="33px" Height="21px"></asp:TextBox>
         <p>
-            <asp:Button ID="btnSalvar" runat="server" Height="35px" Text="Logar" Width="119px" />
+            <asp:Button ID="btnSalvar" runat="server" Height="35px" Text="Logar" Width="119px" OnClick="btnSalvar_Click1" />
         </p>
     </form>
 </body>
