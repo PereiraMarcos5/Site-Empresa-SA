@@ -43,6 +43,11 @@
                             <i class="fa fa-envelope" aria-hidden="true"></i>
                             Pedido
                        </a>
+
+                     <a class="nav-link" href="/cliente/cliente_cadastro.aspx");>
+                            <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                            Cliente
+                       </a>
                         
                  </li>
             </ul>
@@ -75,7 +80,7 @@
         </asp:GridView>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:VENDASConnectionString %>" SelectCommand="SELECT [id], [produto], [preco] FROM [compra]"></asp:SqlDataSource>
         <asp:TextBox ID="txtProduto" runat="server" Enabled="False" OnTextChanged="txtAdicionar_TextChanged" Width="177px"></asp:TextBox>
-        <asp:TextBox ID="txtPreco" runat="server" Width="176px"></asp:TextBox>
+        <asp:TextBox ID="txtPreco" runat="server" Width="176px" Enabled="False"></asp:TextBox>
         <p>
             <asp:Button ID="btnSelect" runat="server" OnClick="btnSelect_Click" Text="Incluir" />
             <asp:Button ID="bntComprar" runat="server" OnClick="bntComprar_Click" Text="Comprar" />

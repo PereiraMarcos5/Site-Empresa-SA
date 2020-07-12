@@ -13,6 +13,7 @@
     <EntitySet Name="pedidos_entregues" EntityType="VENDASModel.pedidos_entregues" />
     <EntitySet Name="entregas" EntityType="VENDASModel.entrega" />
     <EntitySet Name="entregadors" EntityType="VENDASModel.entregador" />
+    <EntitySet Name="clientes" EntityType="VENDASModel.clientes" />
   </EntityContainer>
   <EntityType Name="cadastro">
     <Key>
@@ -89,5 +90,15 @@
     </Key>
     <Property Name="id_entregador" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="nome_entregador" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="clientes">
+    <Key>
+      <PropertyRef Name="id_cliente" />
+    </Key>
+    <Property Name="id_cliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nome_cliente" Type="String" Nullable="false" MaxLength="15" FixedLength="true" Unicode="true" />
+    <Property Name="endereco" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="cartao" Type="String" Nullable="false" MaxLength="12" FixedLength="true" Unicode="true" />
+    <Property Name="idade" Type="Int32" Nullable="false" />
   </EntityType>
 </Schema>

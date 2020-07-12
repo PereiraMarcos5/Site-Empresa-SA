@@ -162,6 +162,9 @@
     <Compile Include="Banco de Dados\cadastro.cs">
       <DependentUpon>Banco.tt</DependentUpon>
     </Compile>
+    <Compile Include="Banco de Dados\clientes.cs">
+      <DependentUpon>Banco.tt</DependentUpon>
+    </Compile>
     <Compile Include="Banco de Dados\compra.cs">
       <DependentUpon>Banco.tt</DependentUpon>
     </Compile>
@@ -189,6 +192,13 @@
     </Compile>
     <Compile Include="Cadastro\cadastro.aspx.designer.cs">
       <DependentUpon>cadastro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cliente\cliente_cadastro.aspx.cs">
+      <DependentUpon>cliente_cadastro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cliente\cliente_cadastro.aspx.designer.cs">
+      <DependentUpon>cliente_cadastro.aspx</DependentUpon>
     </Compile>
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Entrega\Carrinho.aspx.cs">
@@ -250,6 +260,7 @@
       <LastGenOutput>Banco.cs</LastGenOutput>
     </Content>
     <Content Include="Cadastro\cadastro.aspx" />
+    <Content Include="cliente\cliente_cadastro.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -262,6 +273,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Login\default.aspx" />
     <Content Include="Painel\default.aspx" />
+    <Content Include="Resources\Slide1.PNG" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <EntityDeploy Include="Banco de Dados\Banco.edmx">
@@ -303,7 +315,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

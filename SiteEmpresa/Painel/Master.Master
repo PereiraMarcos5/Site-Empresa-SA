@@ -44,6 +44,11 @@
                             <i class="fa fa-envelope" aria-hidden="true"></i>
                             Pedido
                        </a>
+
+                    <a class="nav-link" href="/cliente/cliente_cadastro.aspx");>
+                            <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                            Cliente
+                       </a>
                         
                  </li>
             </ul>

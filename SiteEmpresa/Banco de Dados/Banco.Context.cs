@@ -33,5 +33,6 @@ namespace SiteEmpresa.Banco_de_Dados
         public virtual DbSet<pedidos_entregues> pedidos_entregues { get; set; }
         public virtual DbSet<entrega> entregas { get; set; }
         public virtual DbSet<entregador> entregadors { get; set; }
+        public virtual DbSet<clientes> clientes { get; set; }
     }
 }

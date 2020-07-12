@@ -15,6 +15,16 @@
           <Property Name="endereco" Type="nchar" MaxLength="20" Nullable="false" />
           <Property Name="adicional" Type="nchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="clientes">
+          <Key>
+            <PropertyRef Name="id_cliente" />
+          </Key>
+          <Property Name="id_cliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nome_cliente" Type="nchar" MaxLength="15" Nullable="false" />
+          <Property Name="endereco" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="cartao" Type="nchar" MaxLength="12" Nullable="false" />
+          <Property Name="idade" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="compra">
           <Key>
             <PropertyRef Name="id" />
@@ -81,6 +91,7 @@
         </Association>
         <EntityContainer Name="VENDASModelStoreContainer">
           <EntitySet Name="cadastro" EntityType="Self.cadastro" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="clientes" EntityType="Self.clientes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="compra" EntityType="Self.compra" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="entrega" EntityType="Self.entrega" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="entregador" EntityType="Self.entregador" Schema="dbo" store:Type="Tables" />
@@ -110,6 +121,7 @@
           <EntitySet Name="pedidos_entregues" EntityType="VENDASModel.pedidos_entregues" />
           <EntitySet Name="entregas" EntityType="VENDASModel.entrega" />
           <EntitySet Name="entregadors" EntityType="VENDASModel.entregador" />
+          <EntitySet Name="clientes" EntityType="VENDASModel.clientes" />
         </EntityContainer>
         <EntityType Name="cadastro">
           <Key>
@@ -187,6 +199,16 @@
           <Property Name="id_entregador" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nome_entregador" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
         </EntityType>
+        <EntityType Name="clientes">
+          <Key>
+            <PropertyRef Name="id_cliente" />
+          </Key>
+          <Property Name="id_cliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nome_cliente" Type="String" Nullable="false" MaxLength="15" FixedLength="true" Unicode="true" />
+          <Property Name="endereco" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="cartao" Type="String" Nullable="false" MaxLength="12" FixedLength="true" Unicode="true" />
+          <Property Name="idade" Type="Int32" Nullable="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -260,6 +282,17 @@
               <MappingFragment StoreEntitySet="entregador">
                 <ScalarProperty Name="nome_entregador" ColumnName="nome_entregador" />
                 <ScalarProperty Name="id_entregador" ColumnName="id_entregador" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="clientes">
+            <EntityTypeMapping TypeName="VENDASModel.clientes">
+              <MappingFragment StoreEntitySet="clientes">
+                <ScalarProperty Name="idade" ColumnName="idade" />
+                <ScalarProperty Name="cartao" ColumnName="cartao" />
+                <ScalarProperty Name="endereco" ColumnName="endereco" />
+                <ScalarProperty Name="nome_cliente" ColumnName="nome_cliente" />
+                <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

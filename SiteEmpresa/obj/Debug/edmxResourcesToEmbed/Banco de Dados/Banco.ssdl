@@ -10,6 +10,16 @@
     <Property Name="endereco" Type="nchar" MaxLength="20" Nullable="false" />
     <Property Name="adicional" Type="nchar" MaxLength="50" />
   </EntityType>
+  <EntityType Name="clientes">
+    <Key>
+      <PropertyRef Name="id_cliente" />
+    </Key>
+    <Property Name="id_cliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nome_cliente" Type="nchar" MaxLength="15" Nullable="false" />
+    <Property Name="endereco" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="cartao" Type="nchar" MaxLength="12" Nullable="false" />
+    <Property Name="idade" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="compra">
     <Key>
       <PropertyRef Name="id" />
@@ -76,6 +86,7 @@
   </Association>
   <EntityContainer Name="VENDASModelStoreContainer">
     <EntitySet Name="cadastro" EntityType="Self.cadastro" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="clientes" EntityType="Self.clientes" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="compra" EntityType="Self.compra" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="entrega" EntityType="Self.entrega" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="entregador" EntityType="Self.entregador" Schema="dbo" store:Type="Tables" />

@@ -1,15 +1,15 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Carrinho.aspx.cs" Inherits="SiteEmpresa.Entrega.Carrinho" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="cliente_cadastro.aspx.cs" Inherits="SiteEmpresa.cliente.cliente_cadastro" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-     <link href="../Style/StyleSheetNavbar.css" rel="stylesheet" />
+    <link href="../Style/StyleSheetNavbar.css" rel="stylesheet" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
 </head>
 <body>
-     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!------ Include the above in your HEAD tag ---------->
@@ -52,28 +52,42 @@
             
         </div>
     </nav>
-
     <form id="form1" runat="server">
         <div>
-            Carrinho
+            Espaço do Cliente
         </div>
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="SqlDataSource1" Width="242px">
-            <Columns>
-                <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
-                <asp:BoundField DataField="produto" HeaderText="produto" SortExpression="produto" />
-                <asp:BoundField DataField="preco" HeaderText="preco" SortExpression="preco" />
-            </Columns>
-        </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:VENDASConnectionString %>" SelectCommand="SELECT [id], [produto], [preco] FROM [pedidos_entregues]"></asp:SqlDataSource>
-        <div>Entregador</div>
         <div>
-            <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" DataSourceID="SqlDataSource2" DataTextField="nome_entregador" DataValueField="nome_entregador" AutoPostBack="True">
-            </asp:DropDownList>
+
+            Nome:</div>
+        <div>
+
+            <asp:TextBox ID="txtNome" runat="server" Width="169px" Height="21px"></asp:TextBox>
+
+        </div>
+        <div>
+
+            Endereço:</div>
+        <div>
+
+            <asp:TextBox ID="txtEndereco" runat="server" Height="21px" Width="172px"></asp:TextBox>
+
+        </div>
+        <div>
+
+            Cartão</div>
+        <div>
+
+            <div>
+                <asp:TextBox ID="txtCartao" runat="server" Width="168px" Height="21px"></asp:TextBox>
             </div>
-        <div>
-            <asp:Button ID="btnComprar" runat="server" Text="Comprar" OnClick="btnComprar_Click" />
-            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:VENDASConnectionString %>" SelectCommand="SELECT [nome_entregador] FROM [entregador]"></asp:SqlDataSource>
+
         </div>
+        <div>
+            Idade:</div>
+        <asp:TextBox ID="txtIdade" runat="server" Width="33px" Height="21px"></asp:TextBox>
+        <p>
+            <asp:Button ID="btnSalvar" runat="server" Height="35px" Text="Logar" Width="119px" />
+        </p>
     </form>
 </body>
 </html>

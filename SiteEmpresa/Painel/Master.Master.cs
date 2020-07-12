@@ -11,10 +11,7 @@ namespace SiteEmpresa.Painel
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Convert.ToBoolean(Session["Autenticacao"]) == false)
-            {
-                Response.Redirect("/Login");
-            }
+            
         }
 
         
