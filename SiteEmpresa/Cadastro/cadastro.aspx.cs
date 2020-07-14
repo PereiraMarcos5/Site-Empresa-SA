@@ -23,7 +23,7 @@ namespace SiteEmpresa.Cadastro
             //salvar no banco, equivalente a insert 
             db.usuarios.Add(novo);
             db.SaveChanges();
-            Response.Redirect("/Login/default.aspx");
+            //Response.Redirect("/Login/default.aspx");
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)

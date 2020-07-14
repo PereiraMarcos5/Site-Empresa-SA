@@ -6,7 +6,7 @@
 
 <head runat="server">
     <link href="../Style/StyleSheet.css" rel="stylesheet" />
-    
+    <style></style>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
     <title></title>

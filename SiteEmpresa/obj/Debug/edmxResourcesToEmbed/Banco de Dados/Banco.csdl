@@ -96,9 +96,9 @@
       <PropertyRef Name="id_cliente" />
     </Key>
     <Property Name="id_cliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="nome_cliente" Type="String" Nullable="false" MaxLength="15" FixedLength="true" Unicode="true" />
-    <Property Name="endereco" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
-    <Property Name="cartao" Type="String" Nullable="false" MaxLength="12" FixedLength="true" Unicode="true" />
-    <Property Name="idade" Type="Int32" Nullable="false" />
+    <Property Name="nome_cliente" Type="String" Nullable="false" MaxLength="35" FixedLength="true" Unicode="true" />
+    <Property Name="endereco" Type="String" Nullable="false" MaxLength="40" FixedLength="true" Unicode="true" />
+    <Property Name="cartao" Type="String" Nullable="false" MaxLength="15" FixedLength="true" Unicode="true" />
+    <Property Name="telefone" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
   </EntityType>
 </Schema>

@@ -51,13 +51,13 @@ namespace SiteEmpresa.cliente
         protected global::System.Web.UI.WebControls.TextBox txtCartao;
 
         /// <summary>
-        /// Controle txtIdade.
+        /// Controle txtTelefone.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtIdade;
+        protected global::System.Web.UI.WebControls.TextBox txtTelefone;
 
         /// <summary>
         /// Controle btnSalvar.

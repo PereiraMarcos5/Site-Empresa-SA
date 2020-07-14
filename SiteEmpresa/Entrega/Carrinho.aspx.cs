@@ -22,7 +22,7 @@ namespace SiteEmpresa.Entrega
             }
             else
             {
-                txtPreco.Text = "Cadastre um Cliente";
+                Response.Redirect("/Entrega/Entrega.aspx");
             }
         }
 

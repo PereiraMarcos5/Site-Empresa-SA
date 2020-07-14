@@ -10,15 +10,21 @@ namespace SiteEmpresa.Entrega
 {
     public partial class Entrega : System.Web.UI.Page
     {
+
         DB_VENDAS db = new DB_VENDAS();
         int id_compra;
+
         protected void Page_Load(object sender, EventArgs e)
         {
+           
+
+            
 
         }
 
+        
 
-        protected void btnSelect_Click(object sender, EventArgs e)
+    protected void btnSelect_Click(object sender, EventArgs e)
         {
             compra cp = new compra();
             //int idCompra = Convert.ToInt32(GridView1.SelectedRow.Cells[1].Text);

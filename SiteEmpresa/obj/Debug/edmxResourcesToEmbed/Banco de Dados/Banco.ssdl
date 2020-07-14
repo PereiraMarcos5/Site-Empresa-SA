@@ -15,10 +15,10 @@
       <PropertyRef Name="id_cliente" />
     </Key>
     <Property Name="id_cliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="nome_cliente" Type="nchar" MaxLength="15" Nullable="false" />
-    <Property Name="endereco" Type="nchar" MaxLength="20" Nullable="false" />
-    <Property Name="cartao" Type="nchar" MaxLength="12" Nullable="false" />
-    <Property Name="idade" Type="int" Nullable="false" />
+    <Property Name="nome_cliente" Type="nchar" MaxLength="35" Nullable="false" />
+    <Property Name="endereco" Type="nchar" MaxLength="40" Nullable="false" />
+    <Property Name="cartao" Type="nchar" MaxLength="15" Nullable="false" />
+    <Property Name="telefone" Type="nchar" MaxLength="20" Nullable="false" />
   </EntityType>
   <EntityType Name="compra">
     <Key>

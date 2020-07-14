@@ -7,6 +7,85 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link href="../Style/StyleSheetNavbar.css" rel="stylesheet" />
     <title></title>
+    <style>
+         #fundo{
+         background: rgb(141, 80, 255);
+        height: 800px;
+        width:100%;
+        margin-top: 0;
+
+
+        }
+        #cardapio{
+            background: rgb(195, 230, 19); 
+            font-family: Arial;
+            height: 700px;
+            width: 600px;
+            color:rebeccapurple;
+            margin-left: 420px;
+            font-size: 20px;
+            border: solid rgb(49, 101, 21);
+            border-radius: 40px;
+            margin-bottom: 100px;
+        }
+         #empurrar{
+             background: rgb(141, 80, 255);
+        height: 60px;
+        width:100%;
+        }
+          #info{
+            background: rebeccapurple;
+            width: 100%;
+            height: 100px;
+            font-family: Arial;
+            color: white;
+            text-align: center;
+            display: block;
+         }
+         #contato{
+         background: rebeccapurple;
+            width: 100%;
+            height: 20px;
+         }
+         #SalvarAlimento{
+            width: 300px;
+            height: 60px;
+            margin-left: 150px;
+            background: rebeccapurple;
+            color:  white;
+            font-size: 20px;
+            margin-top: 40px;
+             }
+         #GridView1{
+             margin-top: 20px;
+             margin-left:100px;
+             height: 
+         }
+         #btnRemove{
+
+            width: 300px;
+            height: 60px;
+            margin-left: 150px;
+            background: rebeccapurple;
+            color:  white;
+            font-size: 20px;
+            margin-top: 20px;
+             }
+         #titulo{
+            margin-left: 20px;
+            margin-top: 20px;
+            font-size: 40px;
+         }
+         #logo{
+            width:120px;
+            
+        }
+
+
+
+    </style>
+    <script src="Validar.js"></script>
+
 </head>
 <body>
 
@@ -16,10 +95,11 @@
     <!------ Include the above in your HEAD tag ---------->
 
     <nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Só Natura</a>
+        <a class="navbar-brand" href="#"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+        <img id="logo" src="../Resources/Logo.PNG" />/>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
@@ -55,15 +135,24 @@
     </nav>
 
    
-    <form id="form1" runat="server">
-        <div>
-
-            <div>Cadastrar Alimento&nbsp;&nbsp; </div>
-            <asp:TextBox ID="txtAlimento" runat="server" placeholder="Alimento" CssClass="fadeIn second"></asp:TextBox>
+    <form id="form1" method="post" runat="server">
+        
+        <div id="empurrar"></div>
+           <div id="fundo">
+             <div id="cardapio">
+                 <h2 id="titulo">Cardapio</h2>
+            <div>&nbsp;&nbsp;&nbsp; Cadastrar Alimento&nbsp; <asp:TextBox ID="txtAlimento" runat="server" name="alimento" placeholder="Alimento" CssClass="fadeIn second" Width="342px"></asp:TextBox>
+               
+                &nbsp;&nbsp;
+                 </div>
             <br />
-            Cadastrar Preço</div>
-            <asp:TextBox ID="txtPreco" runat="server" placeholder="Alimento" CssClass="fadeIn second"></asp:TextBox>
-            <asp:Button ID="SalvarAlimento" runat="server" Text="Salvar" OnClick="SalvarAlimento_Click" />
+            &nbsp;&nbsp;
+            Cadastrar Preço&nbsp; 
+            <asp:TextBox ID="txtPreco" runat="server" placeholder="Preço" name="preco" CssClass="fadeIn second" Width="366px"></asp:TextBox>
+
+               
+                   <!-- OnClick="SalvarAlimento_Click" -->  
+            <asp:Button ID="SalvarAlimento" runat="server" Text="Salvar" OnClick="SalvarAlimento_Click"/>
             <div></div>
         <div>
             
@@ -89,6 +178,23 @@
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:VENDASConnectionString %>" SelectCommand="SELECT [id], [produto], [preco] FROM [compra] ORDER BY [id], [produto], [preco]"></asp:SqlDataSource>
             </div>
         <asp:Button ID="btnRemove" runat="server" OnClick="btnRemove_Click" Text="Excluir" />
+    </div>
+                </div>
+       
+          <div id="info">
+            <div id="contato"> 
+
+           </div>
+           <h6 id:"tel">Telefone: (47)3998-9915                  |              Instagran: @sonaturabnu                  |                 Email: sonatura@restautante.com </h6>
+
+            <div id="endereço">
+             <h6 id:"end">Rua das orquideas, 124, Velha - Blumenau SC</h6>
+
+            </div>
+        </div>
+
+
     </form>
+                
 </body>
 </html>

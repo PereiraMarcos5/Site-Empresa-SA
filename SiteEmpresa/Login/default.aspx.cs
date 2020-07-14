@@ -28,12 +28,12 @@ namespace SiteEmpresa.Login
                     //adicionar pagina
                     //Response.Write("<script>alert('Usuário Válido')</script>");
                     Session.Add("Autenticacao", true);
-                    Response.Redirect("/Painel");
+                    Response.Redirect("/TelaCadastro/TelaCadastro.aspx");
                 }
                 else
                 {
                     Session.Add("Autenticacao", false);
-                    Response.Write("<script>alert('Usuário Inválido, tente novamente')</script>");
+                    Response.Write("<script>alert('Usuário Inválido, tente novamente');</script>");
                 }
             }
             catch(Exception ex)

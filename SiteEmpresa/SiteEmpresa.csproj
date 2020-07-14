@@ -261,6 +261,7 @@
     </Content>
     <Content Include="Cadastro\cadastro.aspx" />
     <Content Include="cliente\cliente_cadastro.aspx" />
+    <Content Include="cliente\Validacao.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -273,6 +274,11 @@
     <Content Include="Content\Site.css" />
     <Content Include="Login\default.aspx" />
     <Content Include="Painel\default.aspx" />
+    <Content Include="Resources\download %281%29.jpg" />
+    <Content Include="Resources\download %282%29.jpg" />
+    <Content Include="Resources\download.jpg" />
+    <Content Include="Resources\lanche1.jpg" />
+    <Content Include="Resources\Logo.PNG" />
     <Content Include="Resources\Slide1.PNG" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

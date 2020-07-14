@@ -18,6 +18,6 @@ namespace SiteEmpresa.Banco_de_Dados
         public string nome_cliente { get; set; }
         public string endereco { get; set; }
         public string cartao { get; set; }
-        public int idade { get; set; }
+        public string telefone { get; set; }
     }
 }

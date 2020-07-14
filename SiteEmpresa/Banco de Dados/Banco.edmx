@@ -20,10 +20,10 @@
             <PropertyRef Name="id_cliente" />
           </Key>
           <Property Name="id_cliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="nome_cliente" Type="nchar" MaxLength="15" Nullable="false" />
-          <Property Name="endereco" Type="nchar" MaxLength="20" Nullable="false" />
-          <Property Name="cartao" Type="nchar" MaxLength="12" Nullable="false" />
-          <Property Name="idade" Type="int" Nullable="false" />
+          <Property Name="nome_cliente" Type="nchar" MaxLength="35" Nullable="false" />
+          <Property Name="endereco" Type="nchar" MaxLength="40" Nullable="false" />
+          <Property Name="cartao" Type="nchar" MaxLength="15" Nullable="false" />
+          <Property Name="telefone" Type="nchar" MaxLength="20" Nullable="false" />
         </EntityType>
         <EntityType Name="compra">
           <Key>
@@ -204,10 +204,10 @@
             <PropertyRef Name="id_cliente" />
           </Key>
           <Property Name="id_cliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nome_cliente" Type="String" Nullable="false" MaxLength="15" FixedLength="true" Unicode="true" />
-          <Property Name="endereco" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
-          <Property Name="cartao" Type="String" Nullable="false" MaxLength="12" FixedLength="true" Unicode="true" />
-          <Property Name="idade" Type="Int32" Nullable="false" />
+          <Property Name="nome_cliente" Type="String" Nullable="false" MaxLength="35" FixedLength="true" Unicode="true" />
+          <Property Name="endereco" Type="String" Nullable="false" MaxLength="40" FixedLength="true" Unicode="true" />
+          <Property Name="cartao" Type="String" Nullable="false" MaxLength="15" FixedLength="true" Unicode="true" />
+          <Property Name="telefone" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -288,7 +288,7 @@
           <EntitySetMapping Name="clientes">
             <EntityTypeMapping TypeName="VENDASModel.clientes">
               <MappingFragment StoreEntitySet="clientes">
-                <ScalarProperty Name="idade" ColumnName="idade" />
+                <ScalarProperty Name="telefone" ColumnName="telefone" />
                 <ScalarProperty Name="cartao" ColumnName="cartao" />
                 <ScalarProperty Name="endereco" ColumnName="endereco" />
                 <ScalarProperty Name="nome_cliente" ColumnName="nome_cliente" />

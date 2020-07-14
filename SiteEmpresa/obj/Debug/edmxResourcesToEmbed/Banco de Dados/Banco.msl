@@ -74,7 +74,7 @@
     <EntitySetMapping Name="clientes">
       <EntityTypeMapping TypeName="VENDASModel.clientes">
         <MappingFragment StoreEntitySet="clientes">
-          <ScalarProperty Name="idade" ColumnName="idade" />
+          <ScalarProperty Name="telefone" ColumnName="telefone" />
           <ScalarProperty Name="cartao" ColumnName="cartao" />
           <ScalarProperty Name="endereco" ColumnName="endereco" />
           <ScalarProperty Name="nome_cliente" ColumnName="nome_cliente" />
